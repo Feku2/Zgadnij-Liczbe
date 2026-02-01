@@ -32,6 +32,5 @@ Prosty tekstowy program "Zgadnij liczbę" napisany w C++. Gracz wybiera poziom t
 2. Po uruchomieniu widzimy ekran powitalny z opcjami: nowa gra, TOP5, wyjście
 3. Po wybraniu nowej gry można wybrać poziom i (opcjonalnie) tryb zakładu
 4. W trakcie gry: liczba prób rośnie, a po każdej nieudanej próbie wyświetlana jest losowa wskazówka (za mała/za duża)
-5. Po trafieniu program prosi o imię, zapisuje wynik w pliku i wraca do ekranu powitalnego
+5. Po trafieniu program prosi o imię, zapisuje wynik w vectorze
 6. Ekran TOP5 pokazuje maksymalnie 5 najlepszych wyników dla wybranego poziomu, posortowane rosnąco po liczbie prób
-7. Program obsługuje brak pliku wyników (tworzy nowy) oraz błędy parsowania (np. przywrócenie domyślnej struktury)
