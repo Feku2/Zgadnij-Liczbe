@@ -8,7 +8,7 @@
 
 using namespace std;
 
-vector<string> levels_in_order = {"Easy", "Medium", "Hard"};
+vector<string> levels_in_order = {"Easy  ", "Medium", "Hard  "};
 
 vector<vector<string>> easyDB={};
     /**{"2", "EasyTest1"},
@@ -275,3 +275,4 @@ int main()
     srand(time(0));
     menu_powitalne();
 }
+
