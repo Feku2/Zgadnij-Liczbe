@@ -5,34 +5,35 @@
 #include <cstdlib>
 #include <vector>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 
 vector<string> levels_in_order = {"Easy  ", "Medium", "Hard  "};
 
-vector<vector<string>> easyDB={};
+vector<vector<string>> easyDB={
     /**{"2", "EasyTest1"},
     {"3", "EasyTest2"},
     {"4", "EasyTest3"},
     {"5", "EasyTest4"},
-    {"6", "EasyTest5"}
-    }; **/
+    {"6", "EasyTest5"}**/
+    }; 
 
-    vector<vector<string>> mediumDB={};
+    vector<vector<string>> mediumDB={
     /**{"2", "MediumTest1"},
     {"3", "MediumTest2"},
     {"4", "MediumTest3"},
     {"5", "MediumTest4"},
-    {"6", "MediumTest5"}
-    }; **/
+    {"6", "MediumTest5"}**/
+    }; 
 
-    vector<vector<string>> hardDB={};
+    vector<vector<string>> hardDB={
     /**{"2", "HardTest1"},
     {"3", "HardTest2"},
     {"4", "HardTest3"},
     {"5", "HardTest4"},
-    {"6", "HardTest5"}
-    }; **/
+    {"6", "HardTest5"}**/
+    }; 
 
 string too_high_rand_comm(){
     vector<string> comm = {
@@ -105,12 +106,17 @@ int game(string difficulty){
     if(zaklad=="t"){
         cout<<"Podaj maksymalna liczbe prob: ";
         cin>>max_tries;
+        max_tries=max_tries+1;
     }
 
     do{
         system("cls");
         tries++;
-
+        if(tries >= max_tries && max_tries!=-1){
+            cout<<"\nPrzegrales zaklad!\n";
+            system("pause");
+            return -1;
+        }
         if(tries>=2){
             try{
                 if(stoi(given_number)>stoi(magic_number)){
@@ -131,14 +137,9 @@ int game(string difficulty){
         cout << "|                                       |\n";
         cout << "==========================================\n\n";
         cout << "Numer twojej proby: "<<tries<<"\n\n";
-        //cout << "Sekret: " <<magic_number;
+        cout << "Sekret: " <<magic_number;
         cin >> given_number;
 
-        if(tries >= max_tries && max_tries!=-1){
-            cout<<"\nPrzegrales zaklad!\n";
-            system("pause");
-            return -1;
-        }
 
     }
     while (given_number!=magic_number);
@@ -254,14 +255,16 @@ string menu_powitalne(){
         cout << "|                                       |\n";
         cout << "==========================================\n\n";
         cout << "1  Rozpocznij nowa gre\n";
-        cout << "2  Scoreboard\n";
+        if (!easyDB.empty() || !mediumDB.empty() || !hardDB.empty()){
+            cout << "2  Scoreboard\n";
+        }
         cout << "0 Exit\n";
         cin >> welcome_input_id;
 
         if (welcome_input_id=="1"){
             menu_trudnosc();
         }
-        else if (welcome_input_id=="2"){
+        else if (welcome_input_id=="2" && (!easyDB.empty() || !mediumDB.empty() || !hardDB.empty())){
             scoreboard_menu();
         }
         else if (welcome_input_id=="0"){
@@ -275,4 +278,3 @@ int main()
     srand(time(0));
     menu_powitalne();
 }
-
