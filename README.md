@@ -1,5 +1,8 @@
 # "Zgadnij liczbę" — specyfikacja projektu (C++)
 
+## Start
+Wystarczy pobrać i odpalić plik .exe
+
 ## Krótkie streszczenie
 Prosty tekstowy program "Zgadnij liczbę" napisany w C++. Gracz wybiera poziom trudności, a program losuje liczbę z odpowiedniego zakresu. Gracz zgaduje aż trafi, a po trafieniu podaje swoje imię i — w razie wejścia do TOP5 — wynik jest zapisywany.
 
